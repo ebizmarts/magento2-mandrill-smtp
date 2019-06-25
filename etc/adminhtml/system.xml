@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ebizmarts_MandrillSmtp
+ *
+ * @category    Ebizmarts
+ * @package     Ebizmarts_MandrillSmtp
+ * @author      Ebizmarts Team <info@ebizmarts.com>
+ * @copyright   Ebizmarts (http://ebizmarts.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mailchimp" translate="label" sortOrder="450">
+            <label>MailChimp</label>
+        </tab>
+        <section id="mandrillsmtp" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Mandrill Smtp</label>
+            <tab>mailchimp</tab>
+            <resource>Ebizmarts_Mandrill::config_mandrill</resource>
+            <group id="hint" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>Ebizmarts\MandrillSmtp\Block\Adminhtml\System\Config\Fieldset\Hint</frontend_model>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Mandrill General Configuration</label>
+                <field id="active" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="user" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>User</label>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="apikey" translate="label" type="obscure" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+<!--                <field id="log" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Enable Log</label>-->
+<!--                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>-->
+<!--                    <depends>-->
+<!--                        <field id="*/*/active">1</field>-->
+<!--                    </depends>-->
+<!--                </field>-->
+<!--                <field id="account_details" translate="label" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Account Details</label>-->
+<!--                    <frontend_model>Ebizmarts\Mandrill\Block\Adminhtml\System\Config\Account</frontend_model>-->
+<!--                    <source_model>Ebizmarts\Mandrill\Model\Config\Source\Details</source_model>-->
+<!--                    <depends>-->
+<!--                        <field id="*/*/active">1</field>-->
+<!--                    </depends>-->
+<!--                </field>-->
+<!--                <field id="test_email" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Send test email to</label>-->
+<!--                    <depends>-->
+<!--                        <field id="*/*/active">1</field>-->
+<!--                    </depends>-->
+<!--                </field>-->
+<!--                <field id="send_email" translate="button_label" type="button" sortOrder="70" showInDefault="1" showInWebsite="0" showInStore="1">-->
+<!--                    <label></label>-->
+<!--                    <button_label>Send Test Email</button_label>-->
+<!--                    <frontend_model>Ebizmarts\Mandrill\Block\Adminhtml\SendTestEmail</frontend_model>-->
+<!--                    <depends>-->
+<!--                        <field id="*/*/active">1</field>-->
+<!--                    </depends>-->
+<!--                </field>-->
+            </group>
+        </section>
+    </system>
+
+</config>
