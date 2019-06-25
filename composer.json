@@ -24,6 +24,6 @@
     "forum": "http://ebizmarts.com/forums/view/6"
   },
   "require" : {
-    "magento/framework": "102.3.*"
+    "magento/framework": "102.0.*"
   }
 }
