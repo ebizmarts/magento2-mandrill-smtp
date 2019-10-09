@@ -12,12 +12,12 @@
 namespace Ebizmarts\MandrillSmtp\Model\Transport;
 
 use Magento\Framework\Exception\MailException;
+use Magento\Framework\Mail\EmailMessageInterface;
 use Magento\Framework\Phrase;
 use Zend\Mail\Message;
 use Zend\Mail\Transport\SmtpOptions;
 use Ebizmarts\MandrillSmtp\Helper\Data as HelperData;
 use Zend\Mail\Transport\Smtp as SmtpTransport;
-use Magento\Framework\Mail\MessageInterface;
 
 
 class Smtp extends SmtpTransport
@@ -41,11 +41,11 @@ class Smtp extends SmtpTransport
     }
 
     /**
-     * @param MessageInterface $message
+     * @param EmailMessageInterface $message
      * @throws MailException
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
-    public function sendMessage(MessageInterface $message)
+    public function sendMessage(EmailMessageInterface $message)
     {
         $options = new SmtpOptions();
         $options->setPort(HelperData::PORT);
@@ -68,6 +68,5 @@ class Smtp extends SmtpTransport
                 $e
             );
         }
-
     }
 }
