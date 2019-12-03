@@ -60,7 +60,7 @@ class Smtp extends SmtpTransport
         try {
             $options->setConnectionConfig($connectionConfig);
             $this->setOptions($options);
-            $zm = Message::fromString($message->getRawMessage());
+            $zm = Message::fromString($message->getRawMessage())->setEncoding('utf-8');
             $this->send($zm);
         } catch(\Exception $e) {
             throw new MailException(
