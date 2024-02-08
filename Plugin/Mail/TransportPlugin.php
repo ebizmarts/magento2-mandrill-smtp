@@ -14,7 +14,7 @@ namespace Ebizmarts\MandrillSmtp\Plugin\Mail;
 use Closure;
 use Ebizmarts\MandrillSmtp\Helper\Data as HelperData;
 use Magento\Framework\Mail\TransportInterface;
-use Zend\Mail\Transport\SmtpOptions;
+use Laminas\Mail\Transport\SmtpOptions;
 use Ebizmarts\MandrillSmtp\Model\Transport\Smtp as MandrillSmtp;
 
 
