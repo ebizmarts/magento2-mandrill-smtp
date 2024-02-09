@@ -6,7 +6,7 @@
   },
   "description": "Connect Mandrill with Magento via SMTP",
   "type": "magento2-module",
-  "version": "102.3.4",
+  "version": "102.3.5",
   "authors": [
     {
       "name": "Ebizmarts Corp",
@@ -24,6 +24,6 @@
     "forum": "http://ebizmarts.com/forums/view/6"
   },
   "require" : {
-    "magento/framework": ">=102.3.3||102.0.*||103.0.*"
+    "magento/framework": ">=102.0.3||103.0.*"
   }
 }
